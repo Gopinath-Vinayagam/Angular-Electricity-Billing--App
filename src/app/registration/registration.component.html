@@ -1,0 +1,120 @@
+
+<link rel="stylesheet" href="registration.component.css">
+
+
+<body>
+
+<html>
+
+
+<body>
+    <h1 id="reg" align="center">Registration</h1>
+
+<form ngNativeValidate>
+    
+<table align="center" cellpadding = "10" >
+    <tr><td colspan="2">
+        
+  <h2 align="center"><img src="https://joystudiodesign.com/wp-content/uploads/2015/12/logo.jpg" width="50px" height="50px" /> Electricity Billing APP</h2>
+       
+        
+        </tr>
+  
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td>FIRST NAME  :</td>
+<td><input type="text" name="FirstName" maxlength="15" placeholder="Enter your First Name" [(ngModel)]="FirstName" required/>
+
+</td>
+</tr>
+
+<!----- Last Name ---------------------------------------------------------->
+<tr>
+<td>LAST NAME  :</td>
+<td><input type="text" name="LastName" maxlength="15" placeholder="Enter your Last Name" [(ngModel)]="LastName"required/>
+
+</td>
+</tr>
+<!--------------------------------------Consumer Number---------------------------->
+<tr>
+    <td>CONSUMER NUMBER  :</td>
+    <td><input type="text" name="ConsumerId" maxlength="13" placeholder="Enter Consumer Id" [(ngModel)]="ConsumerId"required/>
+    (with Area code)
+    </td>
+    </tr>
+
+<!----- Date Of Birth -------------------------------------------------------->
+<tr>
+<td>DATE OF BIRTH  :</td>
+
+<td>
+<input type="date" name="DateOfBirth" placeholder="setect DOB" [(ngModel)]="DateOfBirth"required/>
+</td>
+</tr>
+
+<!----- Email Id ---------------------------------------------------------->
+<tr>
+<td>EMAIL ID  :</td>
+<td><input type="text" name="EmailId" maxlength="100" placeholder=" Enter Mail Id" required  [(ngModel)]="EmailId"required/></td>
+</tr>
+
+
+
+
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td>MOBILE NUMBER  :</td>
+<td>
+<input type="text" name="MobileNumber" maxlength="10" placeholder="Enter Mobile No"    [(ngModel)]="MobileNumber"required/>
+(10 digit number)
+</td>
+</tr>
+
+<!----- Consumer Type ----------------------------------------------------------->
+<tr>
+<td>CONSUMER TYPE  :</td>
+<td>
+Domestic <input type="radio" name="ConsumerType" value="Domestic" [(ngModel)]="ConsumerType"  (change)="ConsumerTypes('Domestic')"required/>
+Commercial <input type="radio" name="ConsumerType" value="Commercial"[(ngModel)]="ConsumerType"  (change)="ConsumerTypes('Commercial')"required/>
+</td>
+</tr>
+
+<!----- Address ---------------------------------------------------------->
+<tr>
+<td>ADDRESS  :<br /><br /><br /></td>
+<td><textarea name="Address" rows="4" cols="30"  [(ngModel)]="Address"required></textarea></td>
+</tr>
+
+
+
+<!----- Password ---------------------------------------------------------->
+
+<tr>
+    <td>PASSWORD  :</td>
+    <td><input type="password" name="Password" maxlength="13" placeholder="Enter Password"[(ngModel)]="Password"required/>
+    </td>
+</tr>
+<tr>
+    <td>CONFIRM PASSWORD  :</td>
+    <td><input type="password" name="ConfirmPassword" maxlength="13" placeholder="Enter Confirm Password" [(ngModel)]="ConfirmPassword"required/>
+    </td>
+</tr>
+
+
+
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<button type="submit" value="Submit" id="Submit" (click)="validate()">Submit</button>
+<button type="reset" value="Reset" id="Reset">Reset</button>
+</td>
+</tr>
+</table>
+
+</form>
+
+</body>
+</html>
+
+</body>
+

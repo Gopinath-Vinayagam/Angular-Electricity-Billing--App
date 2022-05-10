@@ -1,0 +1,44 @@
+#reg{
+   
+  font-family: Calibri; 
+          
+  font-style: normal; 
+  font-weight: bolder; 
+  color:#00A885;
+  
+}
+
+table{
+  font-family: Calibri; 
+  color:black; 
+  font-size: 11pt; 
+  font-style: normal;
+  font-weight: bold;
+  background-color: #ffffff;
+
+  box-shadow: 10px;
+  border-collapse: collapse; 
+  border: 20px solid whitesmoke;
+}
+table.inner{
+  border: 0px
+}
+
+
+#Submit{ color:white;
+    background-color: #00A885;
+
+
+}
+
+
+#Reset{
+    color:white;
+    background-color: #a80000;
+    position: relative;
+    left: 10px;
+   
+}
+body{
+    background-color: whitesmoke;
+}

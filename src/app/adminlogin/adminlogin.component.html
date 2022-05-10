@@ -1,0 +1,49 @@
+
+
+<title>Login form with JavaScript Validation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./adminlogin.component.css">
+
+
+<body>
+
+<div class="logo text-center">
+<h1>Admin Login</h1>
+</div>
+<div class="wrapper">
+<div class="inner-warpper text-center">
+  <img src="https://joystudiodesign.com/wp-content/uploads/2015/12/logo.jpg" width="50px" height="50px"/>
+  <h2 class="title"  >Electricity Billing APP</h2>
+   
+  <form action="" id="formvalidate">
+    
+    <div class="input-group">
+      <!---<label class="palceholder" for="userName">User Mail Id</label>--->
+      <input class="form-control" name="userMail" id="userMail" type="text" placeholder="Admin Id" [(ngModel)]="userMail"/>
+      <span class="lighting"></span>
+    </div>
+    <div class="input-group">
+      <!---<label class="palceholder" for="userPassword">Password</label>--->
+      <input class="form-control" name="userPassword" id="userPassword" type="password" placeholder="PassKey" [(ngModel)]="userPassword" />
+      <span class="lighting"></span>
+    </div>
+
+    <button type="submit" id="login" (click)="Adminvalidate()">Login</button>
+    <div class="clearfix supporter">
+      <div class="pull-left remember-me">
+        <input id="rememberMe" type="checkbox">
+        <label for="rememberMe">Remember Me</label>
+      </div>
+      <a href="forgetpassword"class="forgot pull-right" >Forgot Password?</a>
+    </div>
+  </form>
+</div>
+<div class="signup-wrapper text-center">
+  <a href="registration">Not an admin!<span class="text-primary">User Login</span></a>
+</div>
+</div>
+
+
+
+
+</body>
