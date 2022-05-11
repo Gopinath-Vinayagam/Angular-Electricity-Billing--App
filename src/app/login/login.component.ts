@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -8,58 +11,54 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   userMail !: string;
   userPassword !: string;
-  ConsumerId!:string;
-  Username !:string;
-  constructor() { }
+  loggedInUser: any;
+ 
+  
+  
+  constructor(private hc:HttpClient,private rt:Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
   Loginvalidate(){
 let userMail=this.userMail;
 let userPassword=this.userPassword;
-let ConsumerId=this.ConsumerId;
-var Username="Gopinath Vinayagam";
+console.log(userMail,userPassword)
     if (userMail==null || userMail.trim()==null)
     {
-   alert("email id invalid");
-  }
-   else if(userPassword.length<8)
+      this.toastr.warning("email id invalid");
+    }
+   else if( userPassword ==null)
    {
-  alert("Enter Valid Password");
-  }
-  else if(ConsumerId.length<10)
-  {
- alert("Enter Valid Consumer Id With Area CODE ");
- }
+    this.toastr.warning("Enter Valid Password");
+   }
+   else if( userPassword.length<8)
+   {
+    this.toastr.warning("Enter length not match");
+   }
   else
   {
-  alert("Login Successful")
+  //alert("Login Successful")
 
-  
-  alert("Loggedin as  "+userMail);
-    
 
-    const rootUrl = "http://localhost:9000/User/login";
+    let url = "http://localhost:9000/User/login";
+    let data={emailId:userMail,password:userPassword}
 
-    const url = rootUrl + "?ConsumerId"+ ConsumerId +"&userPassword=" + userPassword +"&userMail=" + userMail;
-    var obj ={ConsumerId:ConsumerId,userPassword:userPassword,userMail:userMail,Username:Username};
-    //out.println(url);
-    
-    localStorage.setItem("loged",JSON.stringify(obj))
-    
-   
-	  document.write("Welcome " + userMail);
-
-    fetch(url)
-    .then(res=>res.text())
-    .then(res=> {
-    let data = res.trim();
-    console.log(data);
-    alert(data);
+    this.hc.post<any>(url,data).subscribe(res=>{
+      this.toastr.success("Login Successful")
+      const user= localStorage.setItem("loged",JSON.stringify(res))
+      //this.loggedInUser = res != null ? JSON.parse(res): null;
+      console.log(res)
+    },(err)=>{
+      console.log(err)
+      this.toastr.error("Login UnSuccessful");
     });
 
-   
-    window.location.href="http://localhost:4200/profile";
+    
+
+    this.rt.navigate(["/home"]);
+    this.toastr.success("Loggedin as  "+userMail);
+    
+    //window.location.href="http://localhost:4200/home";
    }
   }
   

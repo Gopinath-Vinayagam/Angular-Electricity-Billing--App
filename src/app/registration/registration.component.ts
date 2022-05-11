@@ -21,7 +21,7 @@ export class RegistrationComponent implements OnInit {
   constructor(private http: HttpClient,private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.toastr.success("Success");
+   
   }
 
 
@@ -66,6 +66,15 @@ let ConfirmPassword=this.ConfirmPassword
   {
     this.toastr.warning('Name field required only alphabet characters');
   }
+
+  else if(!ConsumerId.match(numbers) || ConsumerId.trim()==''  || ConsumerId==null){
+    this.toastr.warning("Enter Valid ConsumerId");
+  }
+  else if (DateOfBirth==null)
+  {
+  this.toastr.warning("Enter your Date of Birth ");
+  } 
+
   
   else if(EmailId.trim()==''||EmailId==null)
   {
@@ -75,7 +84,20 @@ let ConfirmPassword=this.ConfirmPassword
   {
     this.toastr.warning('Invalid email');
   }
- 
+  else if(!MobileNumber.match(numbers) || MobileNumber.trim()=='' || MobileNumber==null){
+    this.toastr.warning("Enter Valid Mobile Number");
+  }
+  else if(ConsumerType==null)
+  {
+   this.toastr.warning("Select Consumer Type");
+  }
+
+  else if (Address==null || Address.trim()==''){
+  this.toastr.warning("Enter a valid ADDRESS");
+  }
+
+
+
   else if(Password.trim()=='' || Password==null)
   {
     this.toastr.warning('Please enter Password');
@@ -101,29 +123,10 @@ let ConfirmPassword=this.ConfirmPassword
     this.toastr.warning('Password max length is 16');
   }
   
-  else if(!MobileNumber.match(numbers) || MobileNumber.trim()=='' || MobileNumber==null){
-    this.toastr.warning("Enter Valid Mobile Number");
-  }
   
-  else if(!ConsumerId.match(numbers) || ConsumerId.trim()==''  || ConsumerId==null){
-    this.toastr.warning("Enter Valid ConsumerId");
-  }
   
-  else if(ConsumerType==null)
-  {
-   this.toastr.warning("Select Consumer Type");
-  }
 
-  else if (Address==null || Address.trim()==''){
-  this.toastr.warning("Enter a valid ADDRESS");
-  }
-
-
-  else if (DateOfBirth==null)
-  {
-  this.toastr.warning("Enter your Date of Birth ");
-  } 
-
+  
 
 else
   {                                           
@@ -148,7 +151,7 @@ else
     fetch(Url).then(res=>res.text()).then(res=> {
        let data = (res);
       console.log(data);
-      window.location.href="http://localhost:4200/rhome"; 
+      window.location.href="http://localhost:4200/home"; 
        alert(data);
        });
 

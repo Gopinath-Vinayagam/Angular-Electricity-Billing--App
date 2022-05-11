@@ -14,12 +14,12 @@
   <img src="https://joystudiodesign.com/wp-content/uploads/2015/12/logo.jpg" width="50px" height="50px"/>
   <h2 class="title"  >Electricity Billing APP</h2>
    
-  <form action="" id="formvalidate">
-    <div class="input-group">
+  <form  id="formvalidate" (ngSubmit)="Loginvalidate()">
+    <!-- <div class="input-group"> -->
       <!---<label class="palceholder" for="Consumer Id">Consumer Id</label>--->
-      <input class="form-control" name="ConsumerId" id="Consumer_Id" type="text" placeholder="Consumer Id" size="11" [(ngModel)]="ConsumerId"/>
-      <span class="lighting"></span>
-    </div>
+      <!-- <input class="form-control" name="ConsumerId" id="Consumer_Id" type="text" placeholder="Consumer Id" size="11" [(ngModel)]="ConsumerId"/> -->
+      <!-- <span class="lighting"></span> -->
+    <!-- </div> -->
     <div class="input-group">
       <!---<label class="palceholder" for="userName">User Mail Id</label>--->
       <input class="form-control" name="userMail" id="userMail" type="text" placeholder="User Mail Id" [(ngModel)]="userMail"/>
@@ -31,7 +31,7 @@
       <span class="lighting"></span>
     </div>
 
-    <button type="submit" id="login" (click)="Loginvalidate()">Login</button>
+    <button  id="login" type="submit" >Login</button>
     <div class="clearfix supporter">
       <div class="pull-left remember-me">
         <input id="rememberMe" type="checkbox">
