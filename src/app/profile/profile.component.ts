@@ -6,22 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+loged !:any;
+data !: any 
   constructor() { }
   loggedInUser:any;
 
   ngOnInit(): void {
-    const user= localStorage.getItem("loged")
-    this.loggedInUser = user != null ? JSON.parse(user): null;
-    let consumerNo =this.loggedInUser.ConsumerId;
-    let userPassword =this.loggedInUser.userPassword;
-    let userMail =this.loggedInUser.userMail;
-    let Username=this.loggedInUser.Username;
 
+    this.data = localStorage.getItem("token");
+    this.loged= JSON.parse(this.data);
+  
+    console.log(this.loged)
     
   }
 
-
+ 
 
 
 

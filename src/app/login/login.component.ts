@@ -12,6 +12,9 @@ export class LoginComponent implements OnInit {
   userMail !: string;
   userPassword !: string;
   loggedInUser: any;
+  authService: any;
+  
+
  
   
   
@@ -45,7 +48,7 @@ console.log(userMail,userPassword)
 
     this.hc.post<any>(url,data).subscribe(res=>{
       this.toastr.success("Login Successful")
-      const user= localStorage.setItem("loged",JSON.stringify(res))
+      const user= localStorage.setItem("token",JSON.stringify(res))
       //this.loggedInUser = res != null ? JSON.parse(res): null;
       console.log(res)
     },(err)=>{
@@ -61,6 +64,10 @@ console.log(userMail,userPassword)
     //window.location.href="http://localhost:4200/home";
    }
   }
+  
+
+
+
   
   }
   

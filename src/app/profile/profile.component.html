@@ -1,21 +1,44 @@
-<table class="table table-bordered">
-    <tbody>
-    <tr>
-        <th>Name </th>
-        <td>{{loggedInUser.Username | uppercase}}</td>
-    </tr>
-    <tr>
-        <th>Email</th>
-        <td>{{loggedInUser.userMail}}</td>
-    </tr>
-    <tr>
-        <th>Consumer ID</th>
-        <td>{{loggedInUser.ConsumerId}}</td>
-    </tr>
-    <!--<tr>
-        <th>Created On</th>
-        <td>{{loggedInUser.createdDate | date}}</td>
-    </tr>-->
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<div class="parent" ><div class="profile" >
+    <figure>
+      <img src="https://referenceglobe.com/EmailTool_Nov13/pilot/create_event/backend/event_image/20210804075018Men-Profile-Image-PNG.png" alt="" />
+    </figure>
+    <header>
+      <h1>{{loged.fullName}}
+        <small>{{loged.consumerType}}  Consumer</small></h1>
+    </header>
+      <dl>
+        <dt><i class="bi bi-person-circle"></i> Full name :</dt>
+          <dd>{{loged.fullName}}</dd>
+        <dt><i class="bi bi-calendar-check-fill"></i> Date of birth :</dt>
+          <dd>{{loged.dateOfBirth}}</dd>
+          <dt><i class="bi bi-person-badge"></i> Consumer Number :	</dt>
+          <dd>{{loged.consumerId}}</dd>
+          <dt> <i class="bi bi-telephone-fill"></i> Mobile Number :</dt>
+          <dd>  
+            {{loged.mobileNumber}}
+          </dd>
+
+          <dt><i class="bi bi-envelope"> Email :</i> </dt>
+          <dd>  
+            {{loged.emailId}}
+          </dd>
+          <dt><i class="bi bi-person-lines-fill"></i> Address  :</dt>
+          <dd>  
+            {{loged.address}}
+          </dd>
+
+      </dl>
+      
     
-    </tbody>
-    </table>
+  
+  </div> <!-- end profile -->
+  </div>
+  
+  
+  <!--<p style="padding: 20px;">Use this for whatever you like. Have fun with it!</p>-->
+
+ 
+<!--<img src="https://referenceglobe.com/EmailTool_Nov13/pilot/create_event/backend/event_image/20210804075018Men-Profile-Image-PNG.png" alt="" />-->
